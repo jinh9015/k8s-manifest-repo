@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkinstest
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: jenkinstest
+  template:
+    metadata:
+      labels:
+        app: jenkinstest
+    spec:
+      containers:
+        - name: demo-frontend
+          image: jinh9015/jenkinstest:${BUILD_NUMBER}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+
