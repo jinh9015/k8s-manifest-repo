@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: demo-frontend
-          image: jinh9015/jenkinstest:31
+          image: jinh9015/jenkinstest:32
           imagePullPolicy: Always
           ports:
             - containerPort: 80
